@@ -4,17 +4,7 @@ import numpy as np
 import pandas as pd
 from pymongo import MongoClient
 from zipfile import Path
-from src import (
-    AWS_S3_BUCKET_NAME,
-    MONGO_DATABASE_NAME,
-    MONGO_COLLECTION_NAME,
-    TARGET_COLUMN,
-    MONGO_DB_URL,
-    MONGO_FILE_NAME,
-    MODEL_FILE_EXTENSION,
-    artifact_folder
-)
- 
+from src.constant import * 
 from src.exception import CustomException
 from src.logger import logging
 from src.utils.main_utils import MainUtils
