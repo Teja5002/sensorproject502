@@ -1,4 +1,27 @@
-pandas
-numpy
+aiofiles>=23.1.0
+dill==0.3.5.1
+dnspython==2.2.1
+# removed database-connect — if you need it, add it only if it supports 3.13
+evidently>=0.4.28  # stable release (uses PyYAML >=6) :contentReference[oaicite:1]{index=1}
+Flask==2.2.3
+# remove httptools because of Python 3.13 incompatibility
+ipykernel>=6.21.0
+Jinja2==3.1.2
+mypy-boto3-s3==1.24.76
+pip-chill==1.0.1
+pymongo==4.2.0
+python-dotenv==0.21.0
+python-multipart==0.0.6
+seaborn==0.12.2
+types-s3transfer==0.6.0.post4
+uvicorn==0.18.3  # use the fallback HTTP parser
+watchfiles==0.17.0
+websockets==10.3
+wincertstore==0.2
+xgboost==1.6.2
+neuro-mf==0.0.5
+boto3==1.26.105
+Werkzeug==2.2.2
+PyYAML==6.0.1
+#-e.
 
--e.
