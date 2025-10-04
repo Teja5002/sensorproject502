@@ -1,10 +1,11 @@
 from flask import Flask, render_template, jsonify, request, send_file
-from src.exception import CustomException
+from src.exception import customException
 from src.logger import logging as lg
 import os,sys
 
-from src.pipelines.Prediction_pipeline import PredictionPipeline
-from src.pipelines.Training_pipeline import Trainingpipeline
+from src.pipelines.training_pipeline import Trainingpipeline 
+from src.pipelines.prediction_pipeline import Predictionpipeline
+
 
 
 
@@ -29,7 +30,7 @@ def train_route():
 
 
     except Exception as e:
-        raise CustomException(e,sys)
+        raise customException(e,sys)
 
 
 @app.route('/predict', methods=['POST', 'GET'])
@@ -42,7 +43,7 @@ def upload():
 
         if request.method == 'POST':
             # it is a object of prediction pipeline
-            prediction_pipeline = PredictionPipeline(request)
+            prediction_pipeline = Predictionpipeline(request)
            
             #now we are running this run pipeline method
             prediction_file_detail = prediction_pipeline.run_pipeline()
@@ -59,7 +60,7 @@ def upload():
         else:
             return render_template('upload_file.html')
     except Exception as e:
-        raise CustomException(e,sys)
+        raise customException(e,sys)
    
 
 

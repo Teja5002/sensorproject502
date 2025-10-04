@@ -5,7 +5,7 @@ import pandas as pd
 from pymongo import MongoClient
 from zipfile import Path
 from src.constant import * 
-from src.exception import CustomException
+from src.exception import customException
 from src.logger import logging
 from src.utils.main_utils import MainUtils
 from dataclasses import dataclass
@@ -34,7 +34,7 @@ class DataIngestion:
 
             return df
         except Exception as e:
-            raise CustomException(e, sys)
+            raise customException(e, sys)
 
     def export_data_into_feature_store_file_path(self) -> pd.DataFrame:
         try:
@@ -54,7 +54,7 @@ class DataIngestion:
 
             return feature_store_file_path
         except Exception as e:
-            raise CustomException(e, sys)
+            raise customException(e, sys)
 
     def initiate_data_ingestion(self) -> Path:
         logging.info("Entered initiate_data_ingestion method of data_ingestion class")
@@ -64,4 +64,4 @@ class DataIngestion:
             logging.info("exited initiate_data_ingestion method of data ingestion class")
             return feature_store_file_path
         except Exception as e:
-            raise CustomException(e, sys) from e
+            raise customException(e, sys) from e
